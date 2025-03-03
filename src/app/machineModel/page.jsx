@@ -9,22 +9,22 @@ function Page() {
   const [reclassifiedData, setReclassifiedData] = useState([]);
   const [showLabelDialog, setShowLabelDialog] = useState(false); // Controls Label Selection Dialog
 
-  // useEffect(() => {
-  //   console.log("useEffect triggered");
+  useEffect(() => {
+    console.log("useEffect triggered");
 
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await fetch("http://localhost:8080/api/post/get");
-  //       const data = await res.json();
-  //       console.log("Fetched data:", data);
-  //       setReclassifiedData(data);
-  //     } catch (error) {
-  //       console.error("Error Fetching Data:", error);
-  //     }
-  //   };
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:8080/api/post/get");
+        const data = await res.json();
+        console.log("Fetched data:", data);
+        setReclassifiedData(data);
+      } catch (error) {
+        console.error("Error Fetching Data:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
   useEffect(() => {
     if (response) {
       setShowLabelDialog(false);
@@ -38,8 +38,7 @@ function Page() {
     e.preventDefault();
 
     try {
-      console.log("object", process.env.NEXT_PUBLIC_PY_API_URL)
-      const res = await fetch(`${process.env.NEXT_PUBLIC_PY_API_URL}/predict`, {
+      const res = await fetch(`http://localhost:5000/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +67,7 @@ function Page() {
       label: label
     }
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_JAVA_API_URL}/api/post`, {
+      const res = await fetch(`http://localhost:8080/api/post`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
