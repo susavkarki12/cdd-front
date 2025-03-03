@@ -1,12 +1,5 @@
 /* Disable scrolling on the entire page */
-body,
-html {
-    overflow: hidden;
-    /* Disable scrolling */
-    height: 100%;
-    /* Ensure the body takes full height */
-    margin: 0;
-}
+
 
 /* Main container */
 .container {
