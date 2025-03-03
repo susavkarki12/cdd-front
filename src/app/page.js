@@ -21,7 +21,7 @@ export default function Home() {
 
         </div>
         <div className="topic__h2">
-          <h2>using machine learning</h2>
+          <h2>using deep learning</h2>
         </div>
         <div className="buttonContainer">
           <button onClick={homepage}>Test the Model</button>
