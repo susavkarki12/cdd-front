@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,10 +21,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen`}>
+        <div className="navContainer">
+          <nav className="navbar">
+            <div className="logo">
+              <Image src="/logo2.png" alt="Logo" width={100} height={50} />
+            </div>
+            <ul>
+              <div className="navbar__list">
+                <li className="navbar__list__point">
+                  <Link href="/">Home</Link>
+                </li>
+                <li className="navbar__list__point">
+                  <Link href="/messagingApp">Messaging App</Link>
+                </li>
+                <li className="navbar__list__point">
+                  <Link href="/team">Team</Link>
+                </li>
+              </div>
+            </ul>
+          </nav>
+        </div>
+        <main>{children}</main>
       </body>
     </html>
   );

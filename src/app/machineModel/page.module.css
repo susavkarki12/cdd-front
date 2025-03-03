@@ -1,0 +1,164 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('/testModel.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+.heading {
+  font-size: 3.4vw;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.form {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 10px;
+  z-index: 1;
+  max-width: 500px;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  width: calc(100% - 120px);
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #f71818;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.button:hover {
+  background-color: #e60000;
+}
+
+/* Prediction dialog box */
+.predictionDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Prediction heading */
+.predictionHeading {
+  font-size: 1.8rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+/* Prediction text */
+.predictionText {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Close button */
+.closeButton {
+  padding: 8px 15px;
+  background-color: #e60000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.closeButton:hover {
+  transform: scale(1.05);
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Label Selection Dialog */
+.labelDialog {
+  position: fixed;
+  top: 55%;
+  left: 53%;
+  color: white;
+  font-size: 1.2rem;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 1000;
+  width: 350px; /* Increased width */
+  max-width: 80%; /* Makes the dialog responsive */
+}
+
+
+.labelButton {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #e60000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.labelButton:hover {
+  transform: scale(1.05);
+}
+
+.closeAlertButton {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.closeAlertButton:hover {
+  transform: scale(1.2);
+}
