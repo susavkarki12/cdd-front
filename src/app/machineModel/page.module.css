@@ -1,3 +1,13 @@
+/* Global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif; /* Optional: Clean font for readability */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Full-page background */
 .container {
   position: fixed;
   top: 0;
@@ -10,13 +20,17 @@
   z-index: 0;
 }
 
+/* Heading style */
 .heading {
   font-size: 3.4vw;
   line-height: 1.2;
   margin-bottom: 20px;
   color: #ffffff;
+  text-align: center; /* Center the heading */
+  padding: 10px;
 }
 
+/* Form styling */
 .form {
   position: absolute;
   top: 200px;
@@ -28,6 +42,9 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  width: 90%; /* Ensure form is responsive */
+  text-align: center;
 }
 
 .input {
@@ -35,6 +52,9 @@
   font-size: 1rem;
   margin-right: 10px;
   width: calc(100% - 120px);
+  border-radius: 5px;
+  border: 1px solid #ddd; /* Light border for input */
+  margin-bottom: 10px; /* Spacing between input and button */
 }
 
 .button {
@@ -46,13 +66,15 @@
   font-size: 1rem;
   border-radius: 5px;
   width: 100px;
+  transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
   background-color: #e60000;
+  transform: scale(1.05);
 }
 
-/* Prediction dialog box */
+/* Prediction Dialog Box */
 .predictionDialog {
   position: fixed;
   top: 50%;
@@ -68,14 +90,12 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Prediction heading */
 .predictionHeading {
   font-size: 1.8rem;
   color: #ffcc00;
   margin-bottom: 10px;
 }
 
-/* Prediction text */
 .predictionText {
   font-size: 1.2rem;
   color: #ffffff;
@@ -83,7 +103,7 @@
   margin-bottom: 15px;
 }
 
-/* Close button */
+/* Close button for Prediction Dialog */
 .closeButton {
   padding: 8px 15px;
   background-color: #e60000;
@@ -98,7 +118,6 @@
 .closeButton:hover {
   transform: scale(1.05);
 }
-
 
 /* Fade-in animation */
 @keyframes fadeIn {
@@ -126,10 +145,9 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   z-index: 1000;
-  width: 350px; /* Increased width */
-  max-width: 80%; /* Makes the dialog responsive */
+  width: 350px;
+  max-width: 80%;
 }
-
 
 .labelButton {
   display: block;
@@ -142,12 +160,14 @@
   width: 80%;
   border-radius: 5px;
   font-size: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .labelButton:hover {
   transform: scale(1.05);
 }
 
+/* Close button for Label Dialog */
 .closeAlertButton {
   background: none;
   border: none;
@@ -161,4 +181,47 @@
 
 .closeAlertButton:hover {
   transform: scale(1.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* Form adjustments */
+  .form {
+    top: 100px;
+    width: 80%; /* Form takes up most of the screen */
+  }
+
+  .input, .button {
+    width: 100%; /* Ensure inputs and buttons fill the container */
+  }
+
+  .heading {
+    font-size: 5vw; /* Adjust heading font size on smaller screens */
+  }
+
+  /* Prediction Dialog Box */
+  .predictionDialog {
+    width: 80%; /* Adjust width on smaller screens */
+    max-width: 90%; /* Prevent overflowing */
+  }
+
+  /* Label Selection Dialog */
+  .labelDialog {
+    width: 80%; /* Ensure dialog width is mobile-friendly */
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 6vw; /* Adjust further for very small screens */
+  }
+
+  .form {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .input {
+    font-size: 0.9rem; /* Reduce font size for small devices */
+  }
 }

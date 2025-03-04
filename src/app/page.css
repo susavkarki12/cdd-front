@@ -2,84 +2,152 @@
 * {
   margin-left: 0;
   margin-top: 0;
-  /* margin-bottom: 3; */
   padding-left: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Add a modern, clean font */
 }
 
 /* Full-page background with no scrolling */
 .mainContainer {
   position: absolute;
   top: 0;
-  width: 100vw;  
-  height: 100vh; 
+  width: 100vw;
+  height: 100vh;
   background: url('/machineLearning.jpg') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
-  color: white;  
-  /* Centers content horizontally */
-  overflow: hidden;  /* Prevents scrolling */
-  /* Remove z-index: -1 to avoid blocking interactions */
+  color: white;
+  overflow: hidden; /* Prevents scrolling */
+  filter: blur(2px); /* Add a subtle blur to background for text contrast */
+  -webkit-filter: blur(2px); /* Safari support */
 }
 
-/* Center text */
-.topic {
-  margin-top: 10rem;
-  margin-left: 9rem;
+/* Content wrapper with backdrop */
+.mainContent {
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4); /* Dark translucent overlay for text contrast */
+  z-index: 1;
+}
+
+/* Centered text container */
+.topic {
+  position: relative;
+  text-align: center;
+  z-index: 2; /* Make sure text is above the overlay */
+  margin-top: 10rem;
+  padding: 0 2rem;
+  max-width: 600px; /* Limit width for aesthetic alignment */
 }
 
 /* Ensure h1 and h2 are aligned properly */
 .topicRow {
   display: flex;
-  gap: 10px;  /* Adjust space between h1 and p */
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .topic__h1, .topic h2 {
   font-size: 3rem;
   margin: 0;
-}
-
-.topic__h2{
-  margin-left: 6rem;
+  font-weight: 700;
+  letter-spacing: 2px; /* Add letter spacing for elegance */
 }
 
 .topic h2 {
   font-size: 2rem;
+  opacity: 0.8; /* Slight opacity to create visual hierarchy */
 }
 
-/* Remove unnecessary flex property */
-.topic h1 {
-  flex: unset;
+.topic__h2 {
+  margin-left: 0;
 }
 
+/* Button container */
 .buttonContainer {
   margin-top: 2rem;
-  margin-left: 9.2rem;
-  position: relative; /* Ensure this is positioned above the background */
-  z-index: 1; /* Make sure button is on top */
+  z-index: 2; /* Ensure button is above overlay */
 }
 
+/* Button styles */
 .buttonContainer button {
   background-color: #f71818; /* Red color */
-  color: white; /* Text color */
+  color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 12px 24px; /* Adjust padding for a bigger button */
-  border: none; /* Removes default border */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Changes cursor to pointer */
-  transition: all 0.3s ease; /* Smooth transition */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px; /* Rounded pill shape for a modern look */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow for prominence */
+  outline: none; /* Remove outline on focus */
 }
 
 /* Hover effect */
 .buttonContainer button:hover {
   background-color: #e60000; /* Darker red */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.1); /* Smooth enlargement on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Add subtle hover shadow */
 }
 
 /* Active (click) effect */
 .buttonContainer button:active {
-  transform: scale(0.95); /* Slightly shrink when clicked */
+  transform: scale(0.95); /* Shrink slightly on click */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .mainContainer {
+    background-attachment: scroll; /* Remove fixed background for mobile */
+  }
+
+  /* Center text and adjust margins for smaller screens */
+  .topic {
+    top: 20%; /* Adjust positioning for better visual balance */
+    margin-top: 2rem;
+    max-width: 90%; /* Allow text to take more width on smaller screens */
+  }
+
+  .topicRow {
+    flex-direction: column;
+    gap: 8px; /* Slightly smaller gap for tighter layout */
+  }
+
+  .topic__h1, .topic h2 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .topic h2 {
+    font-size: 1.5rem; /* Make secondary text slightly smaller */
+  }
+
+  /* Adjust the button container for smaller screens */
+  .buttonContainer {
+    margin-top: 1.5rem; /* Reduce margin for smaller screens */
+  }
+
+  .buttonContainer button {
+    padding: 10px 20px;
+    font-size: 1rem; /* Slightly smaller font size */
+  }
+}
+
+/* Further responsive adjustments for very small screens */
+@media (max-width: 480px) {
+  .topic__h1, .topic h2 {
+    font-size: 1.5rem; /* Further reduce font size for very small screens */
+  }
+
+  .buttonContainer button {
+    padding: 8px 16px; /* Further adjust padding */
+    font-size: 0.9rem; /* Smaller font for tiny screens */
+  }
 }
