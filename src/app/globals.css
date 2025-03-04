@@ -9,8 +9,7 @@ html {
 /* Navbar */
 .navbar {
   width: 100vw;
-  padding: 5px 5%;
-  padding-top: 1rem;
+  padding: 1rem 5%; /* Increased padding for better spacing */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,11 +32,12 @@ html {
   display: flex;
   text-decoration: none;
   padding: 0;
+  margin: 0;
 }
 
 /* Navbar List Items - Joined Boxes */
 .navbar__list__point {
-  font-size: larger;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   padding: 0.5rem 1rem;
@@ -46,6 +46,7 @@ html {
   background-color: transparent;
   display: inline-block;
   color: #ffffff;
+  margin-right: 1rem; /* Space between items */
 }
 
 .navbar__list__point:not(:last-child) {
@@ -70,8 +71,12 @@ html {
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
+  /* Navbar layout adjustments for mobile */
   .navbar {
     padding: 1rem 3%; /* Adjust padding for better fit on smaller screens */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Navbar list direction and alignment for mobile */
@@ -79,14 +84,15 @@ html {
     flex-direction: column;
     align-items: center;
     width: 100%; /* Full width for better stacking */
+    margin-top: 1rem; /* Add space between navbar and items */
   }
 
   /* Navbar list items - spacing and layout adjustments for mobile */
   .navbar__list__point {
     margin: 0.5rem 0; /* Adjust margin to prevent too much space between items */
     padding: 0.8rem 1.5rem; /* Slightly increased padding for better touch targets */
-    font-size: 1.2rem; /* Slightly smaller text for mobile */
-    width: 100%; /* Ensure the items take full width */
+    font-size: 1rem; /* Smaller text for mobile */
+    width: 80%; /* Ensure the items take full width */
     text-align: center; /* Center text on mobile */
     border-radius: 10px; /* Increased border radius for better appearance */
   }
@@ -96,5 +102,10 @@ html {
     transform: scale(1.05); /* Slightly smaller hover scale for better mobile experience */
     background: linear-gradient(45deg, #ff6347, #ffa500);
     border-color: #ffffff;
+  }
+
+  /* Navbar item active state for mobile */
+  .navbar__list__point:active {
+    transform: scale(1); /* Prevents scaling too much on touch devices */
   }
 }
