@@ -125,11 +125,12 @@ function Page() {
               <GiCrossMark style={{ fontSize: "24px" }} />
             </button>
             <h3>Select Correct Label:</h3>
-            <button className={styles.labelButton} onClick={() => handleLabelSelect("Not Cyberbullying")}>Not Cyberbullying</button>
-            <button className={styles.labelButton} onClick={() => handleLabelSelect("Gender/Sexual")}>Gender/Sexual</button>
-            <button className={styles.labelButton} onClick={() => handleLabelSelect("Age")}>Age</button>
-            <button className={styles.labelButton} onClick={() => handleLabelSelect("Ethnicity/Race")}>Ethnicity/Race</button>
-            <button className={styles.labelButton} onClick={() => handleLabelSelect("Religion")}>Religion</button>
+            <button className={styles.labelButton} onClick={() => { handleLabelSelect("Not Cyberbullying"); setShowLabelDialog(false); }}>Not Cyberbullying</button>
+            <button className={styles.labelButton} onClick={() => { handleLabelSelect("Gender/Sexual"); setShowLabelDialog(false); }}>Gender/Sexual</button>
+            <button className={styles.labelButton} onClick={() => { handleLabelSelect("Age"); setShowLabelDialog(false); }}>Age</button>
+            <button className={styles.labelButton} onClick={() => { handleLabelSelect("Ethnicity/Race"); setShowLabelDialog(false); }}>Ethnicity/Race</button>
+            <button className={styles.labelButton} onClick={() => { handleLabelSelect("Religion"); setShowLabelDialog(false); }}>Religion</button>
+
 
           </div>
         )}
