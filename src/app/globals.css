@@ -1,17 +1,15 @@
 /* Global styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif; /* Optional: Clean font for readability */
-  overflow: hidden; /* Prevent scrolling */
+body,
+html {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
 }
-
 
 /* Navbar */
 .navbar {
   width: 100vw;
-  padding: 10px 5%;
+  padding: 5px 5%;
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
@@ -39,22 +37,22 @@ body, html {
 
 /* Navbar List Items - Joined Boxes */
 .navbar__list__point {
-  font-size: 1.1rem; /* Adjust font size to be more responsive */
+  font-size: larger;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  padding: 0.8rem 1.2rem;
+  padding: 0.5rem 1rem;
   border: 2px solid #333333;
   border-radius: 8px;
   background-color: transparent;
   display: inline-block;
   color: #ffffff;
-  text-align: center;
 }
 
 .navbar__list__point:not(:last-child) {
   border-right: 2px solid #333333;
 }
 
+/* Remove underline from links */
 .navbar__list__point a {
   text-decoration: none;
   color: inherit;
@@ -70,77 +68,33 @@ body, html {
   transform: scale(0.95);
 }
 
-/* Responsive Navbar for Smaller Devices */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar {
-    padding: 12px 5%; /* Adjust padding for smaller screens */
+    padding: 1rem 3%; /* Adjust padding for better fit on smaller screens */
   }
 
-  /* Stack navbar items vertically */
+  /* Navbar list direction and alignment for mobile */
   .navbar__list {
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure full width */
+    width: 100%; /* Full width for better stacking */
   }
 
-  /* Add spacing between navbar items */
+  /* Navbar list items - spacing and layout adjustments for mobile */
   .navbar__list__point {
-    margin: 1rem 0;
-    width: 80%; /* Make navbar items stretch across most of the screen */
+    margin: 0.5rem 0; /* Adjust margin to prevent too much space between items */
+    padding: 0.8rem 1.5rem; /* Slightly increased padding for better touch targets */
+    font-size: 1.2rem; /* Slightly smaller text for mobile */
+    width: 100%; /* Ensure the items take full width */
+    text-align: center; /* Center text on mobile */
+    border-radius: 10px; /* Increased border radius for better appearance */
   }
 
-  /* Make navbar buttons larger for better touch targets */
-  .navbar__list__point {
-    padding: 1rem;
-    font-size: 1.2rem;
-  }
-
-  /* Adjust the navbar's positioning on small screens */
-  .navbar {
-    position: relative; /* Remove fixed positioning */
-    box-shadow: none; /* Optional: remove shadow for cleaner look */
-  }
-}
-
-/* Optional: Additional adjustment for very small screens (mobile landscape, very small screens) */
-@media (max-width: 480px) {
-  .navbar__list__point {
-    font-size: 1rem; /* Slightly reduce font size for very small screens */
-    padding: 0.8rem; /* Adjust padding for better spacing */
-  }
-
-  /* Adjust padding for better alignment */
-  .navbar__list__point {
-    margin: 0.8rem 0; /* Smaller margins */
-  }
-}
-
-/* Optional Hamburger Menu for very small devices (Mobile-first approach) */
-@media (max-width: 480px) {
-  .navbar__list {
-    display: none; /* Hide original navbar on mobile */
-  }
-
-  /* Create a hamburger menu icon */
-  .navbar__hamburger {
-    display: block;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    z-index: 2;
-  }
-
-  .navbar__hamburger div {
-    width: 25px;
-    height: 4px;
-    background-color: #fff;
-    margin: 5px 0;
-  }
-
-  /* Display the navbar when hamburger is clicked */
-  .navbar__list.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* On hover, items should stay responsive but with more noticeable effects */
+  .navbar__list__point:hover {
+    transform: scale(1.05); /* Slightly smaller hover scale for better mobile experience */
+    background: linear-gradient(45deg, #ff6347, #ffa500);
+    border-color: #ffffff;
   }
 }

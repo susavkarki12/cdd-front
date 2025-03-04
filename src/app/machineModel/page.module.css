@@ -1,6 +1,4 @@
-/* Global styles */
-
-/* Full-page background */
+/* Container */
 .container {
   position: fixed;
   top: 0;
@@ -13,17 +11,15 @@
   z-index: 0;
 }
 
-/* Heading style */
+/* Heading */
 .heading {
   font-size: 3.4vw;
   line-height: 1.2;
   margin-bottom: 20px;
   color: #ffffff;
-  text-align: center; /* Center the heading */
-  padding: 10px;
 }
 
-/* Form styling */
+/* Form */
 .form {
   position: absolute;
   top: 200px;
@@ -35,21 +31,17 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-  margin: 0 auto;
-  width: 90%; /* Ensure form is responsive */
-  text-align: center;
 }
 
+/* Input */
 .input {
   padding: 10px;
   font-size: 1rem;
   margin-right: 10px;
   width: calc(100% - 120px);
-  border-radius: 5px;
-  border: 1px solid #ddd; /* Light border for input */
-  margin-bottom: 10px; /* Spacing between input and button */
 }
 
+/* Button */
 .button {
   padding: 10px 20px;
   background-color: #f71818;
@@ -59,12 +51,10 @@
   font-size: 1rem;
   border-radius: 5px;
   width: 100px;
-  transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
   background-color: #e60000;
-  transform: scale(1.05);
 }
 
 /* Prediction Dialog Box */
@@ -83,12 +73,14 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Prediction Heading */
 .predictionHeading {
   font-size: 1.8rem;
   color: #ffcc00;
   margin-bottom: 10px;
 }
 
+/* Prediction Text */
 .predictionText {
   font-size: 1.2rem;
   color: #ffffff;
@@ -96,7 +88,7 @@
   margin-bottom: 15px;
 }
 
-/* Close button for Prediction Dialog */
+/* Close Button */
 .closeButton {
   padding: 8px 15px;
   background-color: #e60000;
@@ -138,10 +130,11 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   z-index: 1000;
-  width: 350px;
-  max-width: 80%;
+  width: 350px; /* Increased width */
+  max-width: 80%; /* Makes the dialog responsive */
 }
 
+/* Label Button */
 .labelButton {
   display: block;
   margin: 10px auto;
@@ -153,14 +146,13 @@
   width: 80%;
   border-radius: 5px;
   font-size: 1rem;
-  transition: transform 0.3s ease;
 }
 
 .labelButton:hover {
   transform: scale(1.05);
 }
 
-/* Close button for Label Dialog */
+/* Close Alert Button */
 .closeAlertButton {
   background: none;
   border: none;
@@ -176,45 +168,59 @@
   transform: scale(1.2);
 }
 
-/* Mobile responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  /* Form adjustments */
-  .form {
-    top: 100px;
-    width: 80%; /* Form takes up most of the screen */
-  }
-
-  .input, .button {
-    width: 100%; /* Ensure inputs and buttons fill the container */
-  }
-
+  /* Adjust heading font size */
   .heading {
-    font-size: 5vw; /* Adjust heading font size on smaller screens */
+    font-size: 6vw; /* Scale down the heading on mobile */
   }
 
-  /* Prediction Dialog Box */
-  .predictionDialog {
-    width: 80%; /* Adjust width on smaller screens */
-    max-width: 90%; /* Prevent overflowing */
-  }
-
-  /* Label Selection Dialog */
-  .labelDialog {
-    width: 80%; /* Ensure dialog width is mobile-friendly */
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .heading {
-    font-size: 6vw; /* Adjust further for very small screens */
-  }
-
+  /* Adjust form padding */
   .form {
-    padding: 1rem; /* Reduce padding for smaller screens */
+    top: 150px; /* Adjust vertical position */
+    width: 90%; /* Make form take more space */
+    padding: 1rem; /* Reduce padding for mobile */
   }
 
+  /* Adjust input field size */
   .input {
-    font-size: 0.9rem; /* Reduce font size for small devices */
+    font-size: 0.9rem; /* Smaller font for mobile */
+    padding: 8px; /* Reduce padding */
+    width: calc(100% - 90px); /* Adjust width */
+  }
+
+  /* Adjust button size */
+  .button {
+    font-size: 0.9rem; /* Smaller font for mobile */
+    padding: 8px 15px; /* Adjust button padding */
+    width: auto; /* Let button width adjust */
+  }
+
+  /* Prediction dialog box */
+  .predictionDialog {
+    width: 80%; /* Make dialog box more responsive */
+    padding: 15px; /* Reduce padding */
+  }
+
+  /* Prediction heading size */
+  .predictionHeading {
+    font-size: 1.5rem; /* Smaller font size */
+  }
+
+  /* Prediction text size */
+  .predictionText {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  /* Label dialog adjustments */
+  .labelDialog {
+    width: 90%; /* Make label dialog more responsive */
+    padding: 15px; /* Reduce padding */
+  }
+
+  /* Label button adjustments */
+  .labelButton {
+    padding: 8px;
+    font-size: 0.9rem; /* Smaller font */
   }
 }
