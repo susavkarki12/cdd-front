@@ -14,7 +14,7 @@ function Page() {
 
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/post/get");
+        const res = await fetch("https://springmajor.onrender.com/api/post/get");
         const data = await res.json();
         console.log("Fetched data:", data);
         setReclassifiedData(data);
@@ -38,7 +38,7 @@ function Page() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:5000/predict`, {
+      const res = await fetch(`https://flask-bert-app-bkk6.onrender.com/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
