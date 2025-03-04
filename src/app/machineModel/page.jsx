@@ -67,7 +67,7 @@ function Page() {
       label: label
     }
     try {
-      const res = await fetch(`https://springmajor.onrender.com//api/post`, {
+      const res = await fetch(`https://springmajor.onrender.com/api/post`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
