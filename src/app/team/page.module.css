@@ -41,7 +41,6 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  justify-content: center;
 }
 
 .listItem {
@@ -139,69 +138,4 @@
 
 .card:hover .rollNumber::after {
   width: 80%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  /* Adjust card size and layout for smaller screens */
-  .card {
-    width: 200px; /* Smaller card size */
-    padding: 20px;
-  }
-
-  .profileImage {
-    width: 100px;
-    height: 100px;
-  }
-
-  .name {
-    font-size: 18px; /* Smaller text for mobile */
-  }
-
-  .rollNumber {
-    font-size: 14px;
-  }
-
-  .list {
-    gap: 20px;
-    justify-content: space-evenly; /* Evenly spaced cards */
-  }
-
-  .listItem {
-    max-width: 100%;
-    flex: 1;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
-  .card {
-    width: 180px; /* Even smaller cards */
-    padding: 15px;
-  }
-
-  .profileImage {
-    width: 80px;
-    height: 80px;
-  }
-
-  .name {
-    font-size: 16px; /* Reduced font size for ultra small screens */
-  }
-
-  .rollNumber {
-    font-size: 12px;
-  }
-
-  .list {
-    gap: 15px;
-    justify-content: space-around;
-  }
 }

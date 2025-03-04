@@ -1,7 +1,9 @@
 /* Reset all margins and paddings */
 * {
-  margin: 0;
-  padding: 0;
+  margin-left: 0;
+  margin-top: 0;
+  /* margin-bottom: 3; */
+  padding-left: 0;
   box-sizing: border-box; 
 }
 
@@ -9,13 +11,15 @@
 .mainContainer {
   position: absolute;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw;  
+  height: 100vh; 
   background: url('/machineLearning.jpg') no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
-  color: white;
+  color: white;  
+  /* Centers content horizontally */
   overflow: hidden;  /* Prevents scrolling */
+  /* Remove z-index: -1 to avoid blocking interactions */
 }
 
 /* Center text */
@@ -36,7 +40,7 @@
   margin: 0;
 }
 
-.topic__h2 {
+.topic__h2{
   margin-left: 6rem;
 }
 
@@ -78,36 +82,4 @@
 /* Active (click) effect */
 .buttonContainer button:active {
   transform: scale(0.95); /* Slightly shrink when clicked */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  /* Adjust text centering and size */
-  .topic {
-    margin-top: 5rem; /* Adjust vertical margin */
-    margin-left: 5rem; /* Adjust horizontal margin for smaller screens */
-    width: 80%; /* Limit width for better readability */
-    text-align: center;  /* Center the text */
-  }
-
-  .topic__h1 {
-    font-size: 2.5rem;  /* Reduce font size for h1 */
-  }
-
-  .topic h2 {
-    font-size: 1.5rem;  /* Reduce font size for h2 */
-  }
-
-  /* Adjust button container position */
-  .buttonContainer {
-    margin-top: 1.5rem; /* Adjust margin on top for button */
-    margin-left: 5rem; /* Center the button */
-    width: 80%; /* Limit width to fit better on smaller screens */
-  }
-
-  /* Adjust button size */
-  .buttonContainer button {
-    font-size: 1rem;  /* Smaller font size for button */
-    padding: 10px 20px;  /* Adjust padding for smaller buttons */
-  }
 }
