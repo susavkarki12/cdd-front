@@ -1,15 +1,7 @@
-/* Global styles */
-body,
-html {
-    overflow: hidden;
-    height: 100%;
-    margin: 0;
-}
-
 /* Navbar */
 .navbar {
-  width: 100vw;
-  padding: 1rem 5%; /* Increased padding for better spacing */
+  width: 100%;
+  padding: 1rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,95 +9,58 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.navContainer {
-  margin: 0;
+  z-index: 10;
 }
 
 /* Navbar List */
 .navbar__list {
-  list-style: none;
   display: flex;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
+  gap: 1rem;
+  list-style: none;
 }
 
-/* Navbar List Items - Joined Boxes */
+/* Navbar Items */
 .navbar__list__point {
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   padding: 0.5rem 1rem;
-  border: 2px solid #333333;
   border-radius: 8px;
   background-color: transparent;
-  display: inline-block;
   color: #ffffff;
-  margin-right: 1rem; /* Space between items */
-}
-
-.navbar__list__point:not(:last-child) {
-  border-right: 2px solid #333333;
-}
-
-/* Remove underline from links */
-.navbar__list__point a {
   text-decoration: none;
-  color: inherit;
 }
 
-.navbar__list__point:hover {
-  transform: scale(1.1);
-  background: linear-gradient(45deg, #ff6347, #ffa500);
-  border-color: #ffffff;
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
-.navbar__list__point:active {
-  transform: scale(0.95);
-}
-
-/* Responsive Navbar */
 @media (max-width: 768px) {
-  /* Navbar layout adjustments for mobile */
-  .navbar {
-    padding: 1rem 3%; /* Adjust padding for better fit on smaller screens */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Navbar list direction and alignment for mobile */
+  /* Hide navbar items initially */
   .navbar__list {
+    display: none;
     flex-direction: column;
-    align-items: center;
-    width: 100%; /* Full width for better stacking */
-    margin-top: 1rem; /* Add space between navbar and items */
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 200px;
   }
 
-  /* Navbar list items - spacing and layout adjustments for mobile */
-  .navbar__list__point {
-    margin: 0.5rem 0; /* Adjust margin to prevent too much space between items */
-    padding: 0.8rem 1.5rem; /* Slightly increased padding for better touch targets */
-    font-size: 1rem; /* Smaller text for mobile */
-    width: 80%; /* Ensure the items take full width */
-    text-align: center; /* Center text on mobile */
-    border-radius: 10px; /* Increased border radius for better appearance */
+  /* Show navbar when menu is open */
+  .navbar__list.open {
+    display: flex;
   }
 
-  /* On hover, items should stay responsive but with more noticeable effects */
-  .navbar__list__point:hover {
-    transform: scale(1.05); /* Slightly smaller hover scale for better mobile experience */
-    background: linear-gradient(45deg, #ff6347, #ffa500);
-    border-color: #ffffff;
-  }
-
-  /* Navbar item active state for mobile */
-  .navbar__list__point:active {
-    transform: scale(1); /* Prevents scaling too much on touch devices */
+  /* Menu button visible on mobile */
+  .menu-toggle {
+    display: block;
   }
 }
