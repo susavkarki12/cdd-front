@@ -1,11 +1,4 @@
 /* Global styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif; /* Optional: Clean font for readability */
-  overflow: hidden; /* Prevent scrolling */
-}
 
 /* Full-page background */
 .container {
