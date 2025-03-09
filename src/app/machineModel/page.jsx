@@ -38,23 +38,40 @@ function Page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const res = await fetch(`https://localhost:5000/predict`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text }),
-      });
-
-      const data = await res.json();
-      setResponse(data.prediction);
-    } catch (error) {
-      console.error("Error:", error);
-      setResponse("Error processing request");
+  
+    // Convert input text to lowercase for case-insensitive comparison
+    const lowerCaseInput = text.toLowerCase();
+  
+    // Find the first occurrence of a classified phrase in the input text
+    const foundEntry = reclassifiedData.find((item) =>
+      lowerCaseInput.includes(item.text.toLowerCase())
+    );
+  
+    if (foundEntry) {
+      // If found, display the associated label
+      console.log("Matched classified text:", foundEntry.text);
+      console.log("Assigned Label:", foundEntry.label);
+      setResponse(foundEntry.label);
+    } else {
+      // If no match, make a request to localhost:5000/predict
+      try {
+        const res = await fetch(`http://localhost:5000/predict`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text }),
+        });
+  
+        const data = await res.json();
+        setResponse(data.prediction);
+      } catch (error) {
+        console.error("Error:", error);
+        setResponse("Error processing request");
+      }
     }
   };
+  
 
   const changeLabel = async () => {
     setResponse("")
