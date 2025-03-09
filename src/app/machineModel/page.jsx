@@ -16,6 +16,7 @@ function Page() {
       try {
         const res = await fetch("https://springmajor.onrender.com/api/post/get");
         const data = await res.json();
+        console.log("data",data)
         console.log("Fetched data:", data);
         setReclassifiedData(data);
       } catch (error) {
@@ -33,6 +34,7 @@ function Page() {
   const handleChange = (e) => {
     setText(e.target.value);
   };
+  console.log("hesllo there", reclassifiedData)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
