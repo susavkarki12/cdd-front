@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './page.module.css'; // Import CSS Module
 
 const students = [
-    { name: "Rajesh", rollNumber: "PUR077BEI031", image: "https://randomuser.me/api/portraits/men/1.jpg" },
-    { name: "Sachin", rollNumber: "PUR077BEI034", image: "https://randomuser.me/api/portraits/men/2.jpg" },
-    { name: "Susav", rollNumber: "PUR077BEI043", image: "https://randomuser.me/api/portraits/men/3.jpg" },
-    { name: "Yogesh", rollNumber: "PUR077BEI046", image: "https://randomuser.me/api/portraits/men/4.jpg" }
+    { name: "Rajesh", rollNumber: "PUR077BEI031", image: "/rajesh.jpg" },
+    { name: "Sachin", rollNumber: "PUR077BEI034", image: "/sachin.jpg" },
+    { name: "Susav", rollNumber: "PUR077BEI043", image: "/susav.jpg" },
+    { name: "Yogesh", rollNumber: "PUR077BEI046", image: "/yogesh.jpg" }
 ];
 
 export default function Page() {
